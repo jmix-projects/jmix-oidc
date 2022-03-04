@@ -97,7 +97,7 @@ public abstract class SynchronizingOidcUserMapper<T extends JmixOidcUser> extend
             //todo do not remove all assignments but only assignments missing in new user authorities
             saveContext.removing(existingRoleAssignmentEntities);
 
-            Collection<RoleAssignmentEntity> newRoleAssignmentEntities = buildRoleAssignmentEntities(username, jmixUser.getAuthorities());
+            Collection<RoleAssignmentEntity> newRoleAssignmentEntities = buildRoleAssignmentEntities(username, oidcUser.getAuthorities());
             saveContext.saving(newRoleAssignmentEntities);
         }
 
